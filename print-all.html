@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Dossier Completo para Impresión - Mónica G. Estrada</title>
+    <!-- Se enlazan AMBOS archivos CSS para asegurar que todos los estilos se apliquen -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/unique-styles.css">
+    <style>
+        /* Estilos específicos para la página de impresión maestra */
+        #loader { font-family: sans-serif; text-align: center; font-size: 1.5em; padding: 4em; }
+        .print-section { page-break-before: always; } /* Fuerza un salto de página antes de cada documento */
+        .print-section:first-child { page-break-before: avoid; } /* Evita el salto de página al inicio */
+    </style>
+</head>
+<body>
+    <div id="loader">
+        <h2>Cargando y ensamblando el dossier completo...</h2>
+        <p>Por favor, espere un momento.</p>
+    </div>
+
+    <!-- El contenido de todos los documentos se inyectará aquí -->
+    <div id="dossier-content"></div>
+
+    <!-- El script que hará la magia -->
+    <script src="scripts/print-assembler.js"></script>
+</body>
+</html>
