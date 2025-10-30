@@ -1,2 +1,72 @@
+/* Estilos únicos para cada tipo de testimonio para simular autenticidad */
 
-/* Placeholder: Estilos únicos para cada tipo de testimonio para simular autenticidad (diferentes fuentes, alineaciones, etc.) */
+/* Estilo 1: Testimonio de la Hija (Emotivo, Personal) */
+.style-daughter {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    text-align: justify;
+    color: #222;
+}
+
+/* Estilo 2: Carta del Empleador (Corporativo, Moderno) */
+.style-employer {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Estilo 3: Documento Educativo (SFI) (Claro, Sencillo) */
+.style-sfi {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    padding: 1.5em;
+    background-color: #fdfdfd;
+}
+
+/* Estilo 4: Testimonio de Vecino/Amigo (Casual, Limpio) */
+.style-neighbor {
+    font-family: 'Verdana', sans-serif;
+    font-size: 11.5pt;
+    line-height: 1.8;
+}
+
+/* Estilo 5: Carta de la Iglesia (Solemne, Clásico) */
+.style-church {
+    font-family: 'Garamond', serif;
+    font-size: 13pt;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Estilo 6: Testimonio de Cliente (Agradecido, Directo) */
+.style-customer {
+    font-family: 'Calibri', sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+}
+
+/* Estilo para documentos escaneados */
+.scan-container { text-align: center; }
+.scan-container img {
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 1em auto;
+    display: block;
+}
+
+/* Estilos para Portadas */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20cm;
+    text-align: center;
+    border: 5px double #000;
+    padding: 2em;
+}
+.cover-page h1 { font-size: 28pt; font-family: 'Times New Roman', serif; }
+.cover-page h2 { font-size: 20pt; font-family: 'Garamond', serif; color: #555; margin-top: 2em; }

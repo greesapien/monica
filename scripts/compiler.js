@@ -1,16 +1,11 @@
-
 // Este script se encarga de compilar todo el repositorio en un único archivo .txt para facilitar su uso con IA.
+// NO es una GitHub Action. Se ejecuta 100% en el navegador del cliente.
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Busca el botón en la página principal (index.html)
     const compileBtn = document.getElementById('compileBtn');
+    if (!compileBtn) return;
 
-    // Si el botón no existe en la página actual, no hace nada.
-    if (!compileBtn) {
-        return;
-    }
-
-    // Define la lista completa de archivos del repositorio que se incluirán en la compilación.
+    // Lista completa de archivos del repositorio a compilar.
     const fileList = [
         { path: 'index.html' },
         { path: 'docs/00-portada.html' },
@@ -38,11 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { path: 'scripts/compiler.js' }
     ];
 
-    // Asigna la función al evento 'click' del botón.
     compileBtn.addEventListener('click', async () => {
         alert('Iniciando compilación del repositorio. El archivo .txt se descargará automáticamente al finalizar.');
 
-        // Encabezado del archivo de texto final.
         let fullContent = `
 # ============================================================
 # COMPILACIÓN DEL REPOSITORIO COMPLETO
@@ -55,24 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
 # ============================================================
 `;
 
-        // Itera sobre cada archivo de la lista, lo carga y lo añade al contenido final.
         for (const file of fileList) {
             try {
-                // Obtiene el contenido del archivo usando fetch.
                 const response = await fetch(file.path);
-                if (!response.ok) {
-                    throw new Error(`Error HTTP! Estado: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`Error HTTP! Estado: ${response.status}`);
                 const content = await response.text();
                 
-                // Formatea la sección para este archivo.
                 fullContent += `\n\n\n`;
                 fullContent += `// ============================================================\n`;
                 fullContent += `// ARCHIVO: ${file.path}\n`;
-                // Genera la URL absoluta del archivo.
                 fullContent += `// URL COMPLETA: ${new URL(file.path, window.location.href).href}\n`;
                 fullContent += `// ============================================================\n\n`;
-                // Añade el contenido del archivo.
                 fullContent += content;
 
             } catch (error) {
@@ -81,15 +67,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Crea un objeto Blob con todo el contenido compilado.
         const blob = new Blob([fullContent], { type: 'text/plain;charset=utf-8' });
-
-        // Crea un enlace temporal para iniciar la descarga.
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
         link.download = `repositorio-dossier-monica_${new Date().getTime()}.txt`;
-        
-        // Simula un clic en el enlace para descargar el archivo y luego lo elimina.
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

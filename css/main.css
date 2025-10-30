@@ -1,2 +1,60 @@
+/* Estilos compartidos para todos los documentos (cabecera, márgenes de impresión, etc.) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Times+New+Roman&family=Georgia&family=Arial&family=Garamond&display=swap');
 
-/* Placeholder: Estilos compartidos para todos los documentos (cabecera, márgenes de impresión, etc.) */
+body {
+    font-size: 12pt;
+    margin: 0;
+    padding: 2cm;
+    background-color: #fff;
+    color: #000;
+}
+
+.shared-header {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 2cm;
+    font-family: 'Times New Roman', serif;
+    font-size: 11pt;
+}
+
+.shared-header p {
+    margin: 0.3em 0;
+}
+
+.bilaga-title {
+    text-align: right;
+    font-weight: bold;
+    font-size: 14pt;
+    margin-bottom: 1.5cm;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+}
+
+.signature-block {
+    margin-top: 3cm;
+    page-break-inside: avoid;
+}
+
+.signature-block p {
+    margin-bottom: 0.5em;
+}
+
+.signature-line {
+    margin-top: 2.5cm;
+    width: 250px;
+    border-bottom: 1px solid #000;
+}
+
+@media print {
+    body {
+        margin: 1.5cm;
+        background-color: #fff;
+        color: #000;
+    }
+    .no-print {
+        display: none;
+    }
+    .signature-block {
+        page-break-inside: avoid;
+    }
+}
