@@ -14,16 +14,24 @@
         a { text-decoration: none; color: #0066cc; font-weight: 500; }
         a:hover { text-decoration: underline; }
         .section-cover { font-weight: bold; color: #586069; background-color: #f6f8fa; padding: 0.8em; margin-top: 1em; border-radius: 5px; text-align: center; }
-        button { background-color: #28a745; color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 16px; margin-top: 25px; border-radius: 6px; transition: background-color 0.2s; }
-        button:hover { background-color: #218838; }
+        .action-buttons { display: flex; gap: 15px; margin-top: 25px; }
+        .action-buttons button { color: white; padding: 12px 25px; border: none; cursor: pointer; font-size: 16px; border-radius: 6px; transition: background-color 0.2s; flex-grow: 1; }
+        #compileBtn { background-color: #17a2b8; }
+        #compileBtn:hover { background-color: #138496; }
+        #printAllBtn { background-color: #007bff; }
+        #printAllBtn:hover { background-color: #0069d9; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Dossier de Apelación: Mónica L. González Estrada</h1>
-        <p>Haga clic en un enlace para ver y imprimir el documento. Use el botón al final para compilar todo el repositorio en un único archivo de texto para iteración rápida con IA.</p>
+        
+        <div class="action-buttons">
+            <a href="print-all.html" target="_blank" style="flex-grow: 1;"><button id="printAllBtn">🖨️ Imprimir Dossier Completo (Un Clic)</button></a>
+            <button id="compileBtn">💾 Compilar Repositorio en .txt (Para IA)</button>
+        </div>
 
-        <h2>Índice de Documentos</h2>
+        <h2>Índice de Documentos Individuales</h2>
         <ul>
             <li><a href="docs/00-portada.html" target="_blank">Portada (Försättsblad)</a></li>
             <li class="section-cover">--- SECCIÓN: DOCUMENTOS LEGALES PRINCIPALES ---</li>
@@ -47,7 +55,6 @@
             <li><a href="docs/19-bilaga15.html" target="_blank">Bilaga 15: Kopia av Mónicas pass (Documento Escaneado)</a></li>
         </ul>
 
-        <button id="compileBtn">Compilar todo el Repositorio en un .txt</button>
     </div>
     <script src="scripts/compiler.js"></script>
 </body>
