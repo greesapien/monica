@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileList = [
         { path: 'index.html' },
         { path: 'docs/00-portada.html' },
-        { path: 'docs/01-legal-cover.html' },
+        { path: 'docs/01-legal-cover.html' }, // <-- ARCHIVO AÑADIDO
         { path: 'docs/02-dokument1.html' },
         { path: 'docs/03-dokument2.html' },
         { path: 'docs/04-anexos-cover.html' },
@@ -29,54 +29,54 @@ document.addEventListener('DOMContentLoaded', () => {
         { path: 'docs/13-bilaga9.html' },
         { path: 'docs/14-bilaga10.html' },
         { path: 'docs/15-bilaga11.html' },
-        { path: 'docs/16-bilaga12.html' }, // <-- NUEVO
-        { path: 'docs/17-bilaga13.html' }, // <-- NUEVO
-        { path: 'docs/18-bilaga14.html' }, // <-- RE-NUMERADO
-        { path: 'docs/19-bilaga15.html' }, // <-- RE-NUMERADO
-        { path: 'docs/20-bilaga16.html' }, // <-- RE-NUMERADO
+        { path: 'docs/16-bilaga12.html' },
+        { path: 'docs/17-bilaga13.html' },
+        { path: 'docs/18-bilaga14.html' },
+        { path: 'docs/19-bilaga15.html' },
+        { path: 'docs/20-bilaga16.html' },
         { path: 'css/main.css' },
         { path: 'css/unique-styles.css' },
         { path: 'scripts/compiler.js' }
     ];
 
     compileBtn.addEventListener('click', async () => {
-        alert('Iniciando compilación del repositorio. El archivo .txt se descargará automáticamente al finalizar.');
+        alert('Iniciando kompilering av repot. En .txt-fil kommer att laddas ner automatiskt när det är klart.');
 
         let fullContent = `
 # ============================================================
-# COMPILACIÓN DEL REPOSITORIO COMPLETO
-# CASO: Mónica L. González Estrada
-# FECHA: ${new Date().toISOString()}
+# SAMMANSTÄLLNING AV HELA REPOT
+# Ärende: Mónica L. González Estrada
+# DATUM: ${new Date().toISOString()}
 # ============================================================
-# Este archivo contiene el código fuente de todo el repositorio 
-# para una iteración rápida y contextualizada con una IA.
-# Cada sección de archivo incluye su ruta y URL completa.
+# Denna fil innehåller källkoden från hela repot för snabb
+# och kontextuell interaktion med en AI.
+# Varje filsektion inkluderar dess sökväg och fullständiga URL.
 # ============================================================
 `;
 
         for (const file of fileList) {
             try {
                 const response = await fetch(file.path);
-                if (!response.ok) throw new Error(`Error HTTP! Estado: ${response.status}`);
+                if (!response.ok) throw new Error(`HTTP-fel! Status: ${response.status}`);
                 const content = await response.text();
                 
                 fullContent += `\n\n\n`;
                 fullContent += `// ============================================================\n`;
-                fullContent += `// ARCHIVO: ${file.path}\n`;
-                fullContent += `// URL COMPLETA: ${new URL(file.path, window.location.href).href}\n`;
+                fullContent += `// FIL: ${file.path}\n`;
+                fullContent += `// FULLSTÄNDIG URL: ${new URL(file.path, window.location.href).href}\n`;
                 fullContent += `// ============================================================\n\n`;
                 fullContent += content;
 
             } catch (error) {
-                console.error(`Error al cargar el archivo ${file.path}:`, error);
-                fullContent += `\n\n// --- ERROR AL CARGAR EL ARCHIVO: ${file.path} ---\n// Causa: ${error.message}\n\n`;
+                console.error(`Fel vid laddning av filen ${file.path}:`, error);
+                fullContent += `\n\n// --- FEL VID LADDNING AV FIL: ${file.path} ---\n// Orsak: ${error.message}\n\n`;
             }
         }
 
         const blob = new Blob([fullContent], { type: 'text/plain;charset=utf-8' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
-        link.download = `repositorio-dossier-monica_${new Date().getTime()}.txt`;
+        link.download = `repo-dossier-monica_${new Date().getTime()}.txt`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
