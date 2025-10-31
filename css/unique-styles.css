@@ -1,39 +1,76 @@
-/* Estilos únicos para cada tipo de testimonio para simular autenticidad */
+/* ============================================================ */
+/* FIL: css/unique-styles.css                                   */
+/* Denna fil innehåller ALLA samlade uppdateringar.             */
+/* ============================================================ */
+
+/* ============================================================ */
+/* CSS Variabler för färger och typsnitt                        */
+/* ============================================================ */
+:root {
+    --font-serif-georgia: 'Georgia', serif;
+    --font-serif-garamond: 'Garamond', serif;
+    --font-serif-times: 'Times New Roman', serif;
+    --font-sans-arial: 'Arial', sans-serif;
+    --font-sans-roboto: 'Roboto', sans-serif;
+    --font-sans-verdana: 'Verdana', sans-serif;
+    --font-sans-calibri: 'Calibri', sans-serif;
+
+    --color-text-dark: #222;
+    --color-border: #ccc;
+    --color-background-light: #fdfdfd;
+    --color-cover-heading-secondary: #555;
+}
+
+/* ============================================================ */
+/* Generell stil för dokumentrubriker                           */
+/* ============================================================ */
+.document-content h1 {
+    font-family: var(--font-serif-times);
+    font-size: 18pt;
+    color: #111;
+    margin-bottom: 1.5cm;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ============================================================ */
+/* Unika stilar för olika typer av vittnesmål                   */
+/* ============================================================ */
 
 /* Estilo 1: Testimonio de la Hija (Emotivo, Personal) */
 .style-daughter {
-    font-family: 'Georgia', serif;
+    font-family: var(--font-serif-georgia);
     line-height: 1.7;
     text-align: justify;
-    color: #222;
+    color: var(--color-text-dark);
 }
 
 /* Estilo 2: Carta del Empleador (Corporativo, Moderno) */
 .style-employer {
-    font-family: 'Arial', sans-serif;
+    font-family: var(--font-sans-arial);
     line-height: 1.5;
     text-align: left;
 }
 
 /* Estilo 3: Documento Educativo (SFI) (Claro, Sencillo) */
 .style-sfi {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-sans-roboto);
     line-height: 1.6;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     padding: 1.5em;
-    background-color: #fdfdfd;
+    background-color: var(--color-background-light);
 }
 
 /* Estilo 4: Testimonio de Vecino/Amigo (Casual, Limpio) */
 .style-neighbor {
-    font-family: 'Verdana', sans-serif;
+    font-family: var(--font-sans-verdana);
     font-size: 11.5pt;
     line-height: 1.8;
 }
 
 /* Estilo 5: Carta de la Iglesia (Solemne, Clásico) */
 .style-church {
-    font-family: 'Garamond', serif;
+    font-family: var(--font-serif-garamond);
     font-size: 13pt;
     text-align: center;
     line-height: 1.5;
@@ -41,13 +78,18 @@
 
 /* Estilo 6: Testimonio de Cliente (Agradecido, Directo) */
 .style-customer {
-    font-family: 'Calibri', sans-serif;
+    font-family: var(--font-sans-calibri);
     font-size: 12pt;
     line-height: 1.6;
 }
 
-/* Estilo para documentos escaneados */
-.scan-container { text-align: center; }
+/* ============================================================ */
+/* Stil för inskannade dokument (bilder)                        */
+/* ============================================================ */
+.scan-container {
+    text-align: center;
+    margin-top: 2cm;
+}
 .scan-container img {
     width: 100%;
     max-width: 700px;
@@ -57,16 +99,133 @@
     display: block;
 }
 
-/* Estilos para Portadas */
+/* ============================================================ */
+/* Stilar för Omslagssidor (Covers)                             */
+/* ============================================================ */
 .cover-page {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 20cm;
+    min-height: 20cm;
     text-align: center;
     border: 5px double #000;
     padding: 2em;
+    box-sizing: border-box;
 }
-.cover-page h1 { font-size: 28pt; font-family: 'Times New Roman', serif; }
-.cover-page h2 { font-size: 20pt; font-family: 'Garamond', serif; color: #555; margin-top: 2em; }
+.cover-page h1 {
+    font-size: 28pt;
+    font-family: var(--font-serif-times);
+    margin-bottom: 0.5em;
+}
+.cover-page h2 {
+    font-size: 20pt;
+    font-family: var(--font-serif-garamond);
+    color: var(--color-cover-heading-secondary);
+    margin-top: 1em;
+}
+
+/* ============================================================ */
+/* TILLÄGG: Stil för detaljerna på försättsbladet (00-portada)  */
+/* ============================================================ */
+.cover-details {
+    margin-top: 5cm;
+    font-family: var(--font-serif-times);
+    font-size: 14pt;
+    text-align: left;
+    width: 100%;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cover-details p {
+    margin-bottom: 0.8em;
+}
+
+/* ============================================================ */
+/* TILLÄGG: Stilar för Innehållsförteckning (01-innehallsforteckning) */
+/* ============================================================ */
+.toc-container { 
+    font-family: var(--font-serif-times); 
+}
+
+.toc-container h1 { 
+    text-align: center; 
+    margin-bottom: 2cm; 
+    font-size: 18pt; 
+    text-transform: uppercase; 
+    border-bottom: none; /* Åsidosätter den generella understrykningen för denna specifika rubrik */
+}
+
+.toc-list { 
+    list-style: none; 
+    padding: 0; 
+    max-width: 700px; /* Begränsar bredden för bättre läsbarhet */
+    margin: 0 auto;
+}
+
+.toc-list li { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 0.8em; 
+    font-size: 12pt; 
+    border-bottom: 1px dotted #999; 
+    padding-bottom: 0.4em; 
+}
+
+.toc-list span:first-child { 
+    padding-right: 1em; 
+}
+
+.toc-section { 
+    font-weight: bold; 
+    margin-top: 1.5em; 
+    margin-bottom: 0.5em; 
+    border-bottom: 1px solid #333; /* Tydligare avdelare för sektioner */
+    font-size: 13pt;
+}
+
+/* ============================================================ */
+/* TILLÄGG: Stil för avdelningssidor (t.ex. "Del 1")            */
+/* ============================================================ */
+.section-cover-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 20cm; /* Fyller ut sidan vertikalt */
+    text-align: center;
+    border: 1px solid #000; /* En enklare ram än huvudsidan */
+    padding: 2em;
+    box-sizing: border-box;
+}
+
+.section-cover-page h2 {
+    font-family: var(--font-serif-times);
+    font-size: 24pt;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================================ */
+/* TILLÄGG: Stil för avsändarblock i brev (t.ex. Bilaga 2)      */
+/* ============================================================ */
+.sender-block {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.sender-block p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ============================================================ */
+/* TILLÄGG: Separator för flera bilder på samma sida           */
+/* ============================================================ */
+.image-separator {
+    margin-top: 2cm;
+}

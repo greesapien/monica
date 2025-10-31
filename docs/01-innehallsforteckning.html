@@ -2,26 +2,39 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innehållsförteckning</title>
+    
+    <!-- Länkar till dina centrala CSS-filer -->
     <link rel="stylesheet" href="../css/main.css">
-    <style>
-        .toc-container { padding: 2cm; font-family: 'Times New Roman', serif; }
-        .toc-container h1 { text-align: center; margin-bottom: 2cm; font-size: 18pt; text-transform: uppercase; }
-        .toc-list { list-style: none; padding: 0; }
-        .toc-list li { display: flex; justify-content: space-between; margin-bottom: 0.8em; font-size: 12pt; border-bottom: 1px dotted #ccc; padding-bottom: 0.4em; }
-        .toc-list span:first-child { padding-right: 1em; }
-        .toc-section { font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; border-bottom: none; }
-    </style>
+    <link rel="stylesheet" href="../css/unique-styles.css">
 </head>
 <body>
+
+    <!-- ============================================================ -->
+    <!--     NYTT: Standardiserat sidhuvud med ärendenummer         -->
+    <!-- ============================================================ -->
+    <header class="shared-header">
+        <div class="header-left">
+            <p><strong>Klagande:</strong> Mónica L. González Estrada</p>
+            <p><strong>Personnummer:</strong> 19721102-0800</p>
+        </div>
+        <div class="header-right">
+            <p><strong>Ärende nr:</strong> 51088050</p>
+            <p><strong>Datum:</strong> 2025-10-31</p>
+        </div>
+    </header>
+    <!-- ============================================================ -->
+
+    <!-- Stilen för denna container finns nu i unique-styles.css -->
     <div class="toc-container">
         <h1>Innehållsförteckning</h1>
         <ul class="toc-list">
-            <li class="toc-section"><span>DEL 1: HUVUDSAKLIGA RÄTTSLIGA HANDLINGAR</span><span></span></li>
+            <li class="toc-section"><span>DEL 1: JURIDISKA HUVUDDOKUMENT</span></li>
             <li><span>Dokument 1: Överklagande</span><span></span></li>
             <li><span>Dokument 2: Begäran om Inhibition</span><span></span></li>
             
-            <li class="toc-section"><span>DEL 2: BILAGOR - BEVISNING</span><span></span></li>
+            <li class="toc-section"><span>DEL 2: BILAGOR - BEVISNING</span></li>
             <li><span>Bilaga 1: Personligt Vittnesmål från Dottern</span><span></span></li>
             <li><span>Bilaga 2: Rekommendationsbrev från Städansvarig i Stockholm AB</span><span></span></li>
             <li><span>Bilaga 3: Personbevis - Dottern</span><span></span></li>
@@ -40,5 +53,6 @@
             <li><span>Bilaga 16: Kopia av Mónicas pass</span><span></span></li>
         </ul>
     </div>
+
 </body>
 </html>

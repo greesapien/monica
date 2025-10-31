@@ -2,27 +2,80 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Dossier Completo para Impresión - Mónica G. Estrada</title>
-    <!-- Se enlazan AMBOS archivos CSS para asegurar que todos los estilos se apliquen -->
+    <!-- UPPDATERAD: Titel på svenska för konsekvens -->
+    <title>Fullständig Dossier för Utskrift - Mónica G. Estrada</title>
+
+    <!-- Båda CSS-filerna länkas för att säkerställa att alla stilar tillämpas korrekt -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/unique-styles.css">
+
     <style>
-        /* Estilos específicos para la página de impresión maestra */
-        #loader { font-family: sans-serif; text-align: center; font-size: 1.5em; padding: 4em; }
-        .print-section { page-break-before: always; } /* Fuerza un salto de página antes de cada documento */
-        .print-section:first-child { page-break-before: avoid; } /* Evita el salto de página al inicio */
+        /* Stilar specifika för denna utskriftssida */
+        body {
+            /* Tar bort den grå bakgrunden från index.html för en ren utskriftsvy */
+            background-color: #fff;
+        }
+
+        #loader { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; 
+            text-align: center; 
+            font-size: 1.5em; 
+            padding: 4em; 
+            color: #555;
+        }
+
+        /* Varje dokument-sektion får en egen sida vid utskrift */
+        .print-section { 
+            page-break-before: always; /* Tvingar fram en sidbrytning före varje nytt dokument */
+            page-break-inside: avoid;  /* FÖRBÄTTRING: Försöker undvika att en sektion delas över två sidor */
+        }
+
+        /* Undviker en tom förstasida genom att inte ha en sidbrytning före det allra första dokumentet */
+        .print-section:first-child { 
+            page-break-before: avoid; 
+        }
     </style>
 </head>
 <body>
+
+    <!-- UPPDATERAD: Laddningsmeddelande på svenska -->
     <div id="loader">
-        <h2>Cargando y ensamblando el dossier completo...</h2>
-        <p>Por favor, espere un momento.</p>
+        <h2>Laddar och sammanställer hela dossieren...</h2>
+        <p>Vänligen vänta ett ögonblick. Utskriftsdialogen öppnas automatiskt.</p>
     </div>
 
-    <!-- El contenido de todos los documentos se inyectará aquí -->
+    <!-- Innehållet från alla HTML-dokument kommer att injiceras här av ditt skript -->
     <div id="dossier-content"></div>
 
-    <!-- El script que hará la magia -->
+    <!-- Huvudskriptet som hämtar och monterar alla dokument -->
     <script src="scripts/print-assembler.js"></script>
+
+    <!-- =================================================================== -->
+    <!-- NYTT: Litet skript som automatiskt startar utskriften när allt är   -->
+    <!-- laddat. Det väntar på att ditt 'print-assembler.js'-skript ska     -->
+    <!-- dölja laddaren, vilket signalerar att processen är klar.           -->
+    <!-- =================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('loader');
+            
+            // Skapa en "observatör" som reagerar när laddaren döljs
+            const observer = new MutationObserver((mutationsList, obs) => {
+                for (const mutation of mutationsList) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        if (loader.style.display === 'none') {
+                            // När laddaren är borta, anropa utskriftsfunktionen
+                            window.print();
+                            // Stoppa observatören, den behövs inte längre
+                            obs.disconnect(); 
+                        }
+                    }
+                }
+            });
+
+            // Starta observatören för att bevaka ändringar i laddarens 'style'-attribut
+            observer.observe(loader, { attributes: true });
+        });
+    </script>
 </body>
 </html>

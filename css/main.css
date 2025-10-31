@@ -1,4 +1,41 @@
-/* Estilos compartidos para todos los documentos (cabecera, márgenes de impresión, etc.) */
+/* ============================================================ */
+/* FIL: css/main.css                                            */
+/* Detta är den kompletta och uppdaterade filen.                */
+/* ============================================================ */
+
+/* ============================================================ */
+/* KORRIGERAT: Standardiserat sidhuvud för alla dokumentsidor   */
+/* ------------------------------------------------------------ */
+/* Jag har ändrat detta för att använda 'display: flex'.         */
+/* Det skapar en stabil tvåkolumnslayout där vänster och        */
+/* höger text placeras på samma rad, på varsin sida.            */
+/* ============================================================ */
+.shared-header {
+    display: flex;
+    justify-content: space-between; /* Placerar elementen på varsin kant */
+    align-items: flex-start; /* Justerar elementen i överkant */
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 2cm;
+    font-family: 'Times New Roman', serif;
+    font-size: 11pt;
+    page-break-after: avoid; /* Undvik sidbrytning direkt efter rubriken */
+}
+
+.shared-header p {
+    margin: 0.2em 0;
+    padding: 0;
+}
+
+.header-right {
+    text-align: right;
+}
+/* ============================================================ */
+/* SLUT PÅ KORRIGERING                                          */
+/* ============================================================ */
+
+
+/* Estilos compartidos för alla dokument */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Times+New+Roman&family=Georgia&family=Arial&family=Garamond&display=swap');
 
 body {
@@ -7,18 +44,6 @@ body {
     padding: 2cm;
     background-color: #fff;
     color: #000;
-}
-
-.shared-header {
-    border-bottom: 2px solid #000;
-    padding-bottom: 10px;
-    margin-bottom: 2cm;
-    font-family: 'Times New Roman', serif;
-    font-size: 11pt;
-}
-
-.shared-header p {
-    margin: 0.3em 0;
 }
 
 .bilaga-title {

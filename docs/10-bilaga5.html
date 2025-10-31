@@ -2,32 +2,52 @@
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
-    <title>Bilaga 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilaga 5: Kopia på ansökan om Utdrag ur Belastningsregistret</title>
+    
+    <!-- Länkar till dina centrala CSS-filer -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/unique-styles.css">
 </head>
 <body>
-    <div class="shared-header">
-        <p><strong>Ärende nr:</strong> [NÚMERO DE CASO]</p>
-    </div>
-    <h2 class="bilaga-title">Bilaga 5</h2>
-    <div class="scan-container">
-        <h3>Kopia på ansökan om Utdrag ur Belastningsregistret</h3>
-        <p>
-            Detta är en kopia av den digitala ansökan som skickades till Polismyndigheten den 30 oktober 2025. 
-            Detta dokument bevisar att utdraget är begärt. Det slutgiltiga officiella utdraget kommer att skickas 
-            per post och bifogas separat som komplettering så snart det mottagits.
-        </p>
-        
-        <!-- ===================== RUTAS CORREGIDAS PARA AMBAS IMÁGENES ===================== -->
-        
-        <h4>Sida 1 av 2</h4>
-        <img src="/monica/scans/bilaga5-belastningsregistret1.png" alt="Sida 1 av bekräftelsen på ansökan om utdrag ur belastningsregistret">
-        
-        <h4 style="margin-top: 2cm;">Sida 2 av 2</h4>
-        <img src="/monica/scans/bilaga5-belastningsregistret2.png" alt="Sida 2 av bekräftelsen på ansökan om utdrag ur belastningsregistret">
 
-        <!-- ================================================================================= -->
+    <!-- ============================================================ -->
+    <!--     STANDARDISERAT SIDHUVUD MED KORREKT ÄRENDENUMMER       -->
+    <!-- ============================================================ -->
+    <header class="shared-header">
+        <div class="header-left">
+            <p><strong>Klagande:</strong> Mónica L. González Estrada</p>
+            <p><strong>Personnummer:</strong> 19721102-0800</p>
+        </div>
+        <div class="header-right">
+            <p><strong>Ärende nr:</strong> 51088050</p>
+            <p><strong>Datum:</strong> 2025-10-31</p>
+        </div>
+    </header>
+    <!-- ============================================================ -->
+
+    <div class="document-content">
+        <h2 class="bilaga-title">Bilaga 5</h2>
+        
+        <div class="scan-container">
+            <!-- FÖRBÄTTRING: Rubriken är nu en H1 för bättre struktur -->
+            <h1>Kopia på ansökan om Utdrag ur Belastningsregistret</h1>
+            
+            <p>
+                Detta är en kopia av den digitala ansökan som skickades till Polismyndigheten den 30 oktober 2025. 
+                Detta dokument bevisar att utdraget är begärt. Det slutgiltiga officiella utdraget kommer att skickas 
+                per post och bifogas separat som komplettering så snart det mottagits.
+            </p>
+            
+            <!-- FÖRBÄTTRING: Rubriker för bilder är nu vanliga paragrafer -->
+            <p><strong>Sida 1 av 2</strong></p>
+            <img src="../scans/bilaga5-belastningsregistret1.png" alt="Sida 1 av bekräftelsen på ansökan om utdrag ur belastningsregistret">
+            
+            <!-- FÖRBÄTTRING: Inline-stilen är borttagen och ersatt med en CSS-klass -->
+            <p class="image-separator"><strong>Sida 2 av 2</strong></p>
+            <img src="../scans/bilaga5-belastningsregistret2.png" alt="Sida 2 av bekräftelsen på ansökan om utdrag ur belastningsregistret">
+        </div>
     </div>
+
 </body>
 </html>
