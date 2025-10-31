@@ -1,3 +1,8 @@
+// ============================================================
+// ARCHIVO: scripts/compiler.js
+// URL COMPLETA: https://greesapien.github.io/monica/scripts/compiler.js
+// ============================================================
+
 // Este script se encarga de compilar todo el repositorio en un único archivo .txt para facilitar su uso con IA.
 // NO es una GitHub Action. Se ejecuta 100% en el navegador del cliente.
 
@@ -24,10 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         { path: 'docs/13-bilaga9.html' },
         { path: 'docs/14-bilaga10.html' },
         { path: 'docs/15-bilaga11.html' },
-        { path: 'docs/16-bilaga12.html' },
-        { path: 'docs/17-bilaga13.html' },
-        { path: 'docs/18-bilaga14.html' },
-        { path: 'docs/19-bilaga15.html' },
+        { path: 'docs/16-bilaga12.html' }, // <-- NUEVO
+        { path: 'docs/17-bilaga13.html' }, // <-- NUEVO
+        { path: 'docs/18-bilaga14.html' }, // <-- RE-NUMERADO
+        { path: 'docs/19-bilaga15.html' }, // <-- RE-NUMERADO
+        { path: 'docs/20-bilaga16.html' }, // <-- RE-NUMERADO
         { path: 'css/main.css' },
         { path: 'css/unique-styles.css' },
         { path: 'scripts/compiler.js' }
