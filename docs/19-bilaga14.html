@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/unique-styles.css">
     <style>
+        /* General Styles for Screen view */
         .photo-gallery {
             padding: 1cm 0;
         }
@@ -21,8 +22,8 @@
         }
         .photo-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Creates a responsive grid */
-            gap: 5px; /* Minimal spacing as requested */
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 5px;
             page-break-inside: avoid;
         }
         .photo-item {
@@ -30,8 +31,8 @@
         }
         .photo-item img {
             width: 100%;
-            height: 120px; /* Fixed height for all thumbnails */
-            object-fit: cover; /* Crop image to fit without distortion */
+            height: 120px;
+            object-fit: cover;
             border: 1px solid #ccc;
         }
         .photo-item figcaption {
@@ -41,10 +42,36 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.2;
         }
-         @media print {
+
+        /* ============== NEW: SPECIFIC STYLES FOR PRINTING ============== */
+        @media print {
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+            .shared-header {
+                margin-bottom: 1cm; /* Less space after header in print */
+            }
+            .photo-gallery h3 {
+                font-size: 14pt;
+                margin-top: 1cm;
+                margin-bottom: 0.5cm; /* Drastically reduced space below titles */
+            }
+            .photo-grid {
+                /* Force 6 columns for a denser print layout */
+                grid-template-columns: repeat(6, 1fr);
+                gap: 4px; /* Even smaller gap for print */
+            }
+            .photo-item img {
+                height: 100px; /* Reduced image height for compactness */
+                border: 1px solid #ddd;
+            }
+            .photo-item figcaption {
+                font-size: 7pt; /* Smaller caption font for print */
+                margin-top: 2px;
+            }
+            .document-content > .scan-container > p {
+                 font-size: 10pt; /* Make intro text smaller in print */
             }
         }
     </style>
@@ -124,7 +151,7 @@
                 <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica preparándose para la actividad de kayak junto a su nieto cuarto año.png" alt="Paseo en kayak"><figcaption>Kajaktur (4 år).</figcaption></figure>
                 <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y su nieto riendo y jugando en el parque quinto año.png" alt="Jugando en el parque"><figcaption>Lek i parken (5 år).</figcaption></figure>
                 <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05b Una foto de un abrazo espontaneo - 10 Monica y nieto en un momento de descanso y afecto en la cama sexto año.png" alt="Momento de afecto"><figcaption>En lugn stund av ömhet (6 år).</figcaption></figure>
-                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05e Una foto en la playa - 10 Monica y nieto abrazados y sonriendo en la playa durante las vacaciones septimo año.png" alt="Vacaciones en la playa"><figcaption>Kramar på stranden (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05e Una foto de la playa - 10 Monica y nieto abrazados y sonriendo en la playa durante las vacaciones septimo año.png" alt="Vacaciones en la playa"><figcaption>Kramar på stranden (7 år).</figcaption></figure>
                 <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y su nieto sonriendo montados en un caballo de madera en un parque septimo año.png" alt="Juego en el parque"><figcaption>Gungande i parken (7 år).</figcaption></figure>
                 <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y nieto riendo juntos sentados espalda con espalda en un parque septimo año.png" alt="Riendo juntos"><figcaption>Ett ögonblick av ren glädje (7 år).</figcaption></figure>
             </div>
