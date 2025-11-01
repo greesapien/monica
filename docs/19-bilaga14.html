@@ -20,31 +20,32 @@
             padding-bottom: 0.5em;
         }
         .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start; /* Aligns items to the start of the row */
+            gap: 5px; /* Minimal spacing as requested */
             page-break-inside: avoid;
         }
         .photo-item {
+            flex: 1 1 calc(14.2% - 5px); /* Tries to fit 7 images per row */
+            min-width: 110px; /* Prevents images from becoming too small */
             text-align: center;
+            margin-bottom: 5px;
         }
         .photo-item img {
             width: 100%;
             height: auto;
             border: 1px solid #ccc;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .photo-item figcaption {
-            font-size: 9pt;
+            font-size: 8pt; /* Slightly smaller for denser layout */
             color: #333;
-            margin-top: 5px;
+            margin-top: 4px;
             font-family: 'Arial', sans-serif;
-            line-height: 1.3;
+            line-height: 1.2;
         }
          @media print {
-            .photo-grid {
-                grid-template-columns: repeat(4, 1fr); /* 4 images per row for printing */
-            }
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
@@ -67,132 +68,71 @@
 
         <div class="photo-gallery">
 
-            <!-- SECCIÓN 1: EL COMIENZO DEL VÍNCULO -->
-            <h3>Del 1: Början på er relation</h3>
+            <h3>Del 1: Början på er relation (från graviditet till 2 år)</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/01-EL COMIENZO DEL VINCULO - 01a Foto de Mónica con su hija embarazada - 10 Monica junto a su hija Adriana embarazada zero años.png" alt="Mónica con su hija embarazada">
-                    <figcaption>Mónica med sin gravida dotter, Adriana.</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/01-EL COMIENZO DEL VINCULO - 01b Foto de Mónica sosteniendo al nieto como un bebé recién nacido hospital - 05 Monica con su nieto recien nacido en su primera Navidad juntos zero años.png" alt="Mónica con su nieto recién nacido">
-                    <figcaption>Mónica med sitt nyfödda barnbarn under deras första jul tillsammans.</figcaption>
-                </figure>
-                 <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05b Una foto de un abrazo espontaneo - 10 Monica abrazando a su nieto con cariño primer año.png" alt="Abrazo cariñoso">
-                    <figcaption>En kärleksfull kram mellan Mónica och hennes barnbarn (1 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05c Una foto de las vacaciones - 10 Monica y nieto riendo y abrazados en un tren durante sus vacaciones segundo año.png" alt="Viaje en tren">
-                    <figcaption>Mónica och hennes barnbarn skrattar på ett tåg under semestern (2 år).</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/01-EL COMIENZO DEL VINCULO - 01a Foto de Mónica con su hija embarazada - 10 Monica junto a su hija Adriana embarazada zero años.png" alt="Mónica con su hija embarazada"><figcaption>Mónica med sin gravida dotter.</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/01-EL COMIENZO DEL VINCULO - 01b Foto de Mónica sosteniendo al nieto como un bebé recién nacido hospital - 05 Monica con su nieto recien nacido en su primera Navidad juntos zero años.png" alt="Mónica con su nieto recién nacido"><figcaption>Första julen med sitt nyfödda barnbarn.</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05b Una foto de un abrazo espontaneo - 10 Monica abrazando a su nieto con cariño primer año.png" alt="Abrazo cariñoso"><figcaption>Kärleksfull kram (1 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05c Una foto de las vacaciones - 10 Monica y su nieto en Mamma Mia The Party en Estocolmo primer año.png" alt="Mamma Mia The Party"><figcaption>På "Mamma Mia The Party" (1 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05c Una foto de las vacaciones - 10 Monica de la mano con su nieto de 2 años en el zoológico segundo año.png" alt="Paseo por el zoológico"><figcaption>På zoo (2 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05c Una foto de las vacaciones - 10 Monica y nieto riendo y abrazados en un tren durante sus vacaciones segundo año.png" alt="Viaje en tren"><figcaption>Skratt på tåget (2 år).</figcaption></figure>
             </div>
 
-            <!-- SECCIÓN 2: RUTINAS DIARIAS Y CUIDADO -->
             <h3>Del 2: Dagliga rutiner och omsorg</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02b Recogida del colegio - 09 Nieto feliz de la mano de Monica tras salir de la escuela en la nieve tercer año.png" alt="Recogida del colegio">
-                    <figcaption>Mónica hämtar sitt glada barnbarn från skolan i snön (3 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02c Foto de Mónica dándole de comer o cocinando juntos - 10 Nieto feliz con la casa de jengibre que hizo con su abuela 2 años.png" alt="Cocinando juntos">
-                    <figcaption>Barnbarnet stolt över pepparkakshuset han byggt med sin mormor (2 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02a Foto de Mónica ayudando al nieto con los deberes - 09 Monica supervisando a su nieto Nicolas con los deberes siete años.png" alt="Ayudando con los deberes">
-                    <figcaption>Mónica hjälper sitt barnbarn med läxorna (7 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02d Haciendo Puzzle - 10 Nieto sonriendo orgulloso de su robot de Lego mostrando su interes por la ingenieria septimo año.png" alt="Jugando con Lego">
-                    <figcaption>Mónica uppmuntrar sitt barnbarns intresse för teknik genom att bygga Lego (7 år).</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02b Recogida del colegio - 09 Nieto feliz de la mano de Monica tras salir de la escuela en la nieve tercer año.png" alt="Recogida del colegio"><figcaption>Hämtar från skolan (3 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02c Foto de Mónica dándole de comer o cocinando juntos - 10 Nieto feliz con la casa de jengibre que hizo con su abuela 2 años.png" alt="Cocinando juntos"><figcaption>Bygger pepparkakshus (2 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02a Foto de Mónica ayudando al nieto con los deberes - 09 Monica supervisando a su nieto Nicolas con los deberes siete años.png" alt="Ayudando con los deberes"><figcaption>Hjälper med läxorna (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02d Haciendo Puzzle - 10 Nieto sonriendo orgulloso de su robot de Lego mostrando su interes por la ingenieria septimo año.png" alt="Jugando con Lego"><figcaption>Bygger Lego (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02c Foto de Mónica dándole de comer o cocinando juntos - 09 Nieto aprendiendo a lavar los platos por las tardes con la ayuda de su abuela tercer año.png" alt="Enseñando a lavar platos"><figcaption>Lär sig diska (3 år).</figcaption></figure>
+                 <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02b Recogiendolo del colegio - 09 Nieto caminando por la acera de vuelta del colegio septimo año de caras.png" alt="Vuelta del colegio"><figcaption>På väg hem från skolan (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/02-RUTINAS DIARIAS CUIDADO - 02e Viendo Pelicula - 05 Nieto viendo la pelicula Encanto en casa durante una tarde de cuidado tercer año.png" alt="Viendo una película"><figcaption>Tittar på film (3 år).</figcaption></figure>
             </div>
 
-            <!-- SECCIÓN 3: CELEBRACIÓN DE CUMPLEAÑOS A TRAVÉS DE LOS AÑOS -->
             <h3>Del 3: Födelsedagsfirande genom åren</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04a primer cumpleaños - 10 Monica en el centro de la celebracion del primer cumpleaños de su nieto Nicolas.png" alt="Primer cumpleaños">
-                    <figcaption>Första födelsedagen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04b segundo cumpleaños - 10 Monica celebrando el segundo cumpleaños de su nieto Nicolas.png" alt="Segundo cumpleaños">
-                    <figcaption>Andra födelsedagen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04d cuarto cumpleaños - 10 Nieto soplando las velas de su cuarto cumpleaños junto a su abuela Monica cuarto año.png" alt="Cuarto cumpleaños">
-                    <figcaption>Fjärde födelsedagen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04f sexto cumpleaños - 10 Nieto abrazando a su abuela Monica durante la celebracion de su sexto cumpleaños.png" alt="Sexto cumpleaños">
-                    <figcaption>Sjätte födelsedagen</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04a primer cumpleaños - 10 Monica en el centro de la celebracion del primer cumpleaños de su nieto Nicolas.png" alt="Primer cumpleaños"><figcaption>1:a födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04b segundo cumpleaños - 10 Monica celebrando el segundo cumpleaños de su nieto Nicolas.png" alt="Segundo cumpleaños"><figcaption>2:a födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04c tercer cumpleaños - 10 Monica celebrando el tercer cumpleaños de su nieto Nicolas.png" alt="Tercer cumpleaños"><figcaption>3:e födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04d cuarto cumpleaños - 10 Nieto soplando las velas de su cuarto cumpleaños junto a su abuela Monica cuarto año.png" alt="Cuarto cumpleaños"><figcaption>4:e födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04e quinto cumpleaños - 10 Nieto jugando con sus regalos en su quinto cumpleaños.png" alt="Quinto cumpleaños"><figcaption>5:e födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04f sexto cumpleaños - 10 Nieto abrazando a su abuela Monica durante la celebracion de su sexto cumpleaños.png" alt="Sexto cumpleaños"><figcaption>6:e födelsedagen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04g septimo cumpleaños - 09 Monica en su fiesta de cumpleaños con su nieto septimo cumpleaños.png" alt="Séptimo cumpleaños"><figcaption>7:e födelsedagen</figcaption></figure>
             </div>
             
-            <!-- SECCIÓN 4: CELEBRACIÓN DE NAVIDADES A TRAVÉS DE LOS AÑOS -->
-            <h3>Del 4: Julfirande genom åren</h3>
+            <h3>Del 4: Julfirande och andra högtider</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04h primera navidad - 10 Monica con su nieto en la cena familiar de su primera Navidad zero año.png" alt="Primera Navidad">
-                    <figcaption>Första julen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04i segunda navidad - 10 Monica celebrando la Navidad con su nieto junto al arbol primer año.png" alt="Segunda Navidad">
-                    <figcaption>Andra julen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04k cuarta navidad - 09 Monica y nieto compartiendo un momento de lectura en navidad tercer año.png" alt="Cuarta Navidad">
-                    <figcaption>Fjärde julen</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04n septima navidad - 10 Monica con su nieto y una prima celebrando la septima navidad.png" alt="Séptima Navidad">
-                    <figcaption>Sjunde julen</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04h primera navidad - 10 Monica con su nieto en la cena familiar de su primera Navidad zero año.png" alt="Primera Navidad"><figcaption>Första julen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04i segunda navidad - 10 Monica celebrando la Navidad con su nieto junto al arbol primer año.png" alt="Segunda Navidad"><figcaption>Andra julen</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04j tercera navidad - 10 Monica y su nieto celebrando el Segundo Año Nuevo juntos primer año.png" alt="Año Nuevo"><figcaption>Nyår (1 år)</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04k cuarta navidad - 09 Monica y nieto compartiendo un momento de lectura en navidad tercer año.png" alt="Cuarta Navidad"><figcaption>Fjärde julen (3 år)</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04n septima navidad - 10 Monica con su nieto y una prima celebrando la septima navidad.png" alt="Séptima Navidad"><figcaption>Sjunde julen (6 år)</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04o Halloween - 08 Nieto disfrazado de Spiderman pidiendo caramelos con su abuela tercer año.png" alt="Halloween"><figcaption>Halloween (3 år)</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/04-CELEBRACIONES FAMILIARES HITOS - 04o Pascua - 09 Nieto pintando huevos de Pascua en casa tercer año.png" alt="Pascua"><figcaption>Påskfirande (3 år)</figcaption></figure>
             </div>
 
-            <!-- SECCIÓN 5: EVENTOS ESCOLARES Y ACTIVIDADES -->
             <h3>Del 5: Skolhändelser och aktiviteter</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03b Foto de Mónica en una actuación escolar - Coro - 09 Nieto en la celebración de Santa Lucía en el colegio tercer año.png" alt="Santa Lucía">
-                    <figcaption>Stöd vid Luciafirandet i skolan (3 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03c Clases de natacion - 10 Monica y su nieto en la piscina durante una clase de natacion quinto año.png" alt="Clases de natación">
-                    <figcaption>Mónica följer med på simlektioner (5 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03d Partido de futbol - 10 Monica y su nieto con la camiseta de Suecia listos para un partido sexto año.png" alt="Partido de fútbol">
-                    <figcaption>Hejar på fotbollsmatcher, klädd i Sverigetröja (6 år).</figcaption>
-                </figure>
-                 <figure class="photo-item">
-                    <img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03d Clases de patinaje - 09 Nieto patinando sobre hielo por la noche septimo año.png" alt="Patinaje sobre hielo">
-                    <figcaption>Stödjer barnbarnet vid skridskoåkning (7 år).</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03c Foto de Mónica al lado de la piscina durante las clases de natación - 10 Monica acompañando a su nieto en sus clases de natacion infantil zero año.png" alt="Natación infantil"><figcaption>Simlektioner (0 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03b Foto de Mónica en una actuación escolar - Coro - 09 Nieto en la celebración de Santa Lucía en el colegio tercer año.png" alt="Santa Lucía"><figcaption>Luciafirande (3 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03d Foto de Mónica en un partido de fútbol - 08 Nieto en su entrenamiento de futbol cuatro años.png" alt="Entrenamiento de fútbol"><figcaption>Fotbollsträning (4 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03c Clases de natacion - 10 Monica y su nieto en la piscina durante una clase de natacion quinto año.png" alt="Clases de natación"><figcaption>Vid poolen (5 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03e Foto de Mónica en clases de escalada - 07 Nieto practicando escalada en un rocodromo quinto año.png" alt="Escalada"><figcaption>Klättring (5 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03d Partido de futbol - 10 Monica y su nieto con la camiseta de Suecia listos para un partido sexto año.png" alt="Partido de fútbol"><figcaption>Hejar på Sverige (6 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/03-EVENTOS ESCOLARES Y ACTIVIDADES - 03d Clases de patinaje - 09 Nieto patinando sobre hielo por la noche septimo año.png" alt="Patinaje sobre hielo"><figcaption>Skridskoåkning (7 år).</figcaption></figure>
             </div>
 
-             <!-- SECCIÓN 6: OCIO Y VÍNCULO AFECTIVO -->
             <h3>Del 6: Fritid och känslomässigt band</h3>
             <div class="photo-grid">
-                <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y su nieto riendo y jugando en el parque quinto año.png" alt="Jugando en el parque">
-                    <figcaption>Skratt och lek i parken (5 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05e Una foto en la playa - 10 Monica y nieto abrazados y sonriendo en la playa durante las vacaciones septimo año.png" alt="Vacaciones en la playa">
-                    <figcaption>Glädje och kramar på stranden under semestern (7 år).</figcaption>
-                </figure>
-                 <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y nieto riendo juntos sentados espalda con espalda en un parque septimo año.png" alt="Riendo juntos">
-                    <figcaption>Ett ögonblick av ren glädje och samhörighet (7 år).</figcaption>
-                </figure>
-                <figure class="photo-item">
-                    <img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05b Una foto de un abrazo espontaneo - 10 Monica y nieto en un momento de descanso y afecto en la cama sexto año.png" alt="Momento de afecto">
-                    <figcaption>En lugn stund av vila och ömhet (6 år).</figcaption>
-                </figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Tres generaciones de la familia disfrutando de un paseo zero año.png" alt="Paseo familiar"><figcaption>Tre generationer på promenad.</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica preparándose para la actividad de kayak junto a su nieto cuarto año.png" alt="Paseo en kayak"><figcaption>Kajaktur (4 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y su nieto riendo y jugando en el parque quinto año.png" alt="Jugando en el parque"><figcaption>Lek i parken (5 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05b Una foto de un abrazo espontaneo - 10 Monica y nieto en un momento de descanso y afecto en la cama sexto año.png" alt="Momento de afecto"><figcaption>En lugn stund av ömhet (6 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05e Una foto en la playa - 10 Monica y nieto abrazados y sonriendo en la playa durante las vacaciones septimo año.png" alt="Vacaciones en la playa"><figcaption>Kramar på stranden (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y su nieto sonriendo montados en un caballo de madera en un parque septimo año.png" alt="Juego en el parque"><figcaption>Gungande i parken (7 år).</figcaption></figure>
+                <figure class="photo-item"><img src="/monica/scans/05-OCIO Y VINCULO AFECTIVO - 05a Una foto ambos riendo juntos - 10 Monica y nieto riendo juntos sentados espalda con espalda en un parque septimo año.png" alt="Riendo juntos"><figcaption>Ett ögonblick av ren glädje (7 år).</figcaption></figure>
             </div>
         </div>
     </div>
 </body>
-</html>
+</html>```
