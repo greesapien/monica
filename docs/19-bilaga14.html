@@ -28,7 +28,7 @@
         }
         .photo-item {
             text-align: center;
-            margin: 0; /* <-- THIS IS THE FIX: Resets the default browser margin for <figure> */
+            margin: 0; /* Resets the default browser margin for <figure> */
         }
         .photo-item img {
             width: 100%;
@@ -44,11 +44,13 @@
             line-height: 1.2;
         }
 
-        /* Specific Styles for Printing */
+        /* ============== OPTIMIZED STYLES FOR PRINTING ============== */
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                margin: 1.5cm; /* Standard print margin */
+                padding: 0; /* Remove body padding for print */
             }
             .shared-header {
                 margin-bottom: 1cm;
@@ -59,15 +61,16 @@
                 margin-bottom: 0.5cm;
             }
             .photo-grid {
-                grid-template-columns: repeat(6, 1fr);
-                gap: 4px;
+                /* Force 8 columns for maximum density on A4 paper */
+                grid-template-columns: repeat(8, 1fr);
+                gap: 3px; /* Even smaller gap */
             }
             .photo-item img {
-                height: 100px;
+                height: 90px; /* Adjusted height for more columns */
                 border: 1px solid #ddd;
             }
             .photo-item figcaption {
-                font-size: 7pt;
+                font-size: 6pt; /* Smaller caption to fit */
                 margin-top: 2px;
             }
             .document-content > .scan-container > p {
